@@ -3,7 +3,7 @@ this is the repo for storing my review notes regarding conformal prediction
 
 
 
-## Notes
+## Papers at the Conference
 
 * [COPA 2017](http://clrc.rhul.ac.uk/copa2017/)
   * [Preface: Alex Gammerman, Vladimir Vovk, Zhiyuan Luo, Harris Papadopoulos](http://proceedings.mlr.press/v60/gammerman17a/gammerman17a.pdf)

@@ -1,10 +1,9 @@
 # conformal_prediction
 this is the repo for storing my review notes regarding conformal prediction
 
-
+$$\frac{1}{2}$$
 
 ## Papers at the Conference
-
 * [COPA 2017](http://clrc.rhul.ac.uk/copa2017/)
 * three groups
   * conformal and Venn prediction;

@@ -48,6 +48,12 @@ Experiments:
 
 ### 6. Result
 
+![figure3](https://github.com/Rowing0914/conformal_prediction/blob/master/notes/Online_Aggregation_of_Unbounded_Signed_Losses_Using/images/figure3.PNG)
+
+![figure4](https://github.com/Rowing0914/conformal_prediction/blob/master/notes/Online_Aggregation_of_Unbounded_Signed_Losses_Using/images/figure4.PNG)
+
+![figure5](https://github.com/Rowing0914/conformal_prediction/blob/master/notes/Online_Aggregation_of_Unbounded_Signed_Losses_Using/images/figure5.PNG)
+
 ### 7. Conclusion
 
 Not stated....

@@ -1,7 +1,10 @@
 # conformal_prediction
 this is the repo for storing my review notes regarding conformal prediction
 
-$\frac{1}{2}$
+## MathJax Plugin for Github on Chrome
+If your browser cannot render the math equations on the markdown.
+Please use this extension.
+https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima/related
 
 ## Papers at the Conference
 * [COPA 2017](http://clrc.rhul.ac.uk/copa2017/)

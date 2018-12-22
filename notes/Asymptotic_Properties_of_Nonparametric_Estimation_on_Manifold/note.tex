@@ -1,0 +1,60 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{algorithm2e}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage[citestyle=alphabetic,bibstyle=authortitle]{biblatex}
+\addbibresource{sample.bib}
+\author{Norio Kosaka}
+\title{Review: Asymptotic Properties of Nonparametric Estimation on Manifold}
+\begin{document}
+
+\maketitle
+
+\section{Paper Profile}
+\begin{itemize}
+\item Title: Asymptotic Properties of Nonparametric Estimation on Manifold
+\item Author: Yury Yanovich, https://www.hse.ru/en/org/persons/134005657
+\item Organisation: Faculty of Computer Science, Higher School of Economics (National Research University)
+\item Publish Year: 2017
+\item URL: http://proceedings.mlr.press/v60/yanovich17a/yanovich17a.pdf
+\end{itemize}
+
+\section{Prerequisites}
+\begin{itemize}
+    \item Manifold Learning: Manifold learning is an approach to non-linear dimensionality reduction. Algorithms for this task are based on the idea that the dimensionality of many data sets is only artificially high. Details are left to the article of scikit-learn, https://scikit-learn.org/stable/modules/manifold.html
+\end{itemize}
+
+\section{Contents in the paper}
+\begin{enumerate}
+\item Introduction
+\item Results Description
+    \begin{enumerate}
+        \item Manifold Learning Data Model
+        \item Statistics Form
+        \item Main Results
+    \end{enumerate}
+\item Data Model
+\item Main Results
+\item Proof of Main Theorems
+\item Conclusion
+\end{enumerate}
+
+\section{Abstract&Introduction}
+This is a series of his research regarding the asymptotic properties of statistical approaches on Manifold. You can find other analysis on Manifold assumption from his website.
+
+\textbf{Manifold Learning} is \textit{Dimensionality Reduction} problem under the Manifold assumption about the processed data, which is assumed to lie on an arbitrarily unknown Manifold of lower dimentionality embedded in an high-dimensional input space. \textbf{Manifold Assumption} holds that the local neighbourhood of each manifold point is equivalent to an area of low-dimensional Euclidean space. Especially, Local and global nonparametric statistics with a special form on a manifold are considered in the present paper.
+
+The paper is organized as follows. In Section 2 the data model is described, and the
+main results of the paper are listed and discussed. In Section 3 the data model is defined,
+and all assumptions are listed. Then, Section 4 contains exact formulations of the main
+results. Section 5 contains the main proofs. In Section 6 the paper summary and future
+work directions are given. In Appendix A supplementary Lemmas proofs are given.
+
+
+
+
+\end{document}

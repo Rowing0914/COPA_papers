@@ -1,0 +1,129 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{algorithm2e}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{biblatex}
+\addbibresource{sample.bib}
+\author{Norio Kosaka}
+\title{Review: Combination of Conformal Predictors for Classification}
+\begin{document}
+
+\maketitle
+
+\section{Paper Profile}
+\begin{itemize}
+\item Title: Combination of Conformal Predictors for Classification
+\item Author: Paolo Toccaceli, Alexander Gammerman
+\item Organisation: Royal Holloway, University of London, CS Research Centre
+\item Publish Year: 2017
+\item URL: http://proceedings.mlr.press/v60/yanovich17a/yanovich17a.pdf
+\end{itemize}
+
+\section{Prerequisites}
+\begin{itemize}
+    \item Conformal Prediction: Intuitively it is the methods that uses past experience to determine precise level of confidence in new predictions, and it employs statistical indicators to evaluate the validity of the prediction
+    Good PPT: http://www.clrc.rhul.ac.uk/copa2017/presentations/CP{\_}Tutorial{\_}2017.pdf
+\end{itemize}
+
+\section{Contents in the paper}
+\begin{enumerate}
+\item Introduction
+\item Results Description
+    \begin{enumerate}
+        \item Manifold Learning Data Model
+        \item Statistics Form
+        \item Main Results
+    \end{enumerate}
+\item Data Model
+\item Main Results
+\item Proof of Main Theorems
+\item Conclusion
+\end{enumerate}
+
+\section{Abstract}
+The author proposed some possible approaches to the combination of \textit{Conformal Predictors} in the binary classification case.
+\begin{itemize}
+    \item p-value combination techniques
+    \item Calibration of p-values into Bayes factors
+\end{itemize}
+And the result shows that the \textbf{P-value combined with Fisher's Method} worked fine, when ranking compounds by strength of evidence.
+
+\section{Introduction}
+\textbf{Conformal Predictors}(CP)(Vovk et al., 2005 \cite{vovk2005conformal}; Gammerman and Vovk, 2007\cite{gammerman2007hedging}) was proposed to provide a validity property on the prediction stage.The efficiency of CP hugely relies on underlying \textit{Machine Learning algorithms}. The objective of this paper is to explore ways to improve CP by some forms \textit{ensembling}, which in general refers to the approaches, for example, Random Forests or Bagging. But the author claimed that he has differentiate the proposition from other approaches in a way that it does not explicitly aim at combating overfitting and correlation per se. So, the challenge which he has encountered was to find a method of wide applicability that combines the predictions in a synergistic way.
+
+\section{Conformal Predictors}
+Key points:
+\begin{itemize}
+    \item the training set is made up of $l$ independent identically distributed samples
+    \item CP assigns a p-value to a prediction $y$
+    \item \textbf{Non-Conformity Measure(NCM)} is a real-valued function $\alpha$ expressing how odd the sampled example is among the training set.
+    \item Applying one of the following methods to a test set
+    \begin{itemize}
+        \item Given a significance level $\epsilon$, a \textit{region predictor} outputs for each test object the set of labels, such that the actual label is not in the set no more than a fraction $\epsilon$ of the times.
+        \item Or, one can pick the largest p-value for a given test object alongside with its credibility and confidence.
+    \end{itemize}
+\end{itemize}
+Two forms of CP
+\begin{itemize}
+    \item Transductive CP: computationally expensive, requires the computation from scratch for each object
+    \item Inductive CP: requires just one training of the underlying, yet also it requires that the training data set which is split into a proper training set and a calibration set.
+\end{itemize}
+
+\section{Requirements for CP combination}
+The research of the problem of combining p-values to obtain a single test for a common hypothesis has a long history, originating to the paper from Fiher's work \cite{fisher1992statistical}, yet there has not been identified the general enough approach to apply to any kind of real-world problem. Indeed, the combination of p-values from different \textit{CP} on the same test object is a variant of the approaches above and it has aims described below.
+\begin{itemize}
+    \item \textbf{Preserve Validity}: for the output of the combination method to be a CP, this is a necessary property.
+    \item \textbf{Improve Efficiency}: smaller prediction sets must result from a desirable method of combination.
+\end{itemize}
+
+There are two principle in \textit{Mondrian Inductive CP}\\
+(http://onlineprediction.net/?n=Main.MondrianConformalPredictor).
+ \begin{enumerate}
+     \item The p-values from the same CP for the various test objects do not necessarily follow the uniform distribution.
+     \item The p-values from different CP for the same test object are not independent.
+ \end{enumerate}
+
+\section{Methods from Statistical Hypothesis Testing}
+In general there are two types of p-value combination methods.
+\begin{itemize}
+    \item Order-statistic methods by Davidov(2011)\cite{davidov2011combining}
+    \item Quantile method, here we consider two methods more: Fisher's method and Stouffer's method
+\end{itemize}
+
+\subsection{Comparison of Fisher's method(Chi-square method) and Soutffer's method (z-transform method)}
+"Fisher’s method is asymptotically optimal among essentially all methods of combining
+independent tests" from Littel and Folks(1971) \cite{littell1971asymptotic}
+
+\section{Calibration to Bayes Factors}
+P-values can be transformed into \textit{Bayes Factors}, which defined as 
+
+\begin{gather}
+B_{\theta}(x) = \frac{L_{x}(\theta)}{\int_{\Theta} L_{x}(\theta) dQ(\theta)}
+\end{gather}
+where $L_{x}(\theta)$ is the likelihood of $x$ given $\theta$ and $Q(\theta)$ is a prior distribution of $\theta$. So, the interpretation here is that the smaller a Bayes factor is, the less likely it is that the parameter will take value $\theta$ having observed data $x$.
+
+Also a p-value can be transformed into Bayes factor in a way of a \textit{calibrator}, which is that a non-decreasing and continuous function $f:(0,1) \rightarrow (0, + \infty)$ is a calibrator if and only if
+$$
+\int^1_0 \{ \frac{1}{f(p)} \} dp \leq 1
+$$ For instance, a variant of calibrators is given by $f(p) := \frac{p^{1-\alpha}}{\alpha}$ for $\alpha \in (0,1)$
+
+\section{Empirical Results}
+The authors has tested the three machine learning algorithms combined with NCM using the dataset of the product of a Hihg Throughput Screening assay aimed at identifying chemical compounds that kill cells from a particular tumoral cell line. And the classification into Active vs. Inactive was carried out by applying a threshold on the estimated percentage of cells still alive after exposure to the chemical. And the chosen algorithms are 
+\begin{itemize}
+    \item Neural network: adapting conforma predictor to the output of the neuron in the output layer.
+    \item SVM: NCM is $-y_i(x_i)$
+    \item Random Forests: NCM chosen for RF was the fraction of trees that classified the test object as having the opposite label as the typothetical one
+\end{itemize} I would like to refer the readers to the original paper regarding the detailed report of the empirical results.
+
+\section{Conclusion}
+ The study demonstrated on a real-world example that, despite their simplicity, these techniques can be of benefit, in particular with the Fisher method exhibiting a synergistic effect on the accuracy of ranking as in the case of the combination of NN and SVM. As for future work, since the tested algorithms only used the bare p-values, we can combine several CP, like \textit{Mixture of Experts models} by (Jacobs et al.,1991 \cite{jacobs1991adaptive})
+
+\medskip
+ 
+\printbibliography
+
+\end{document}

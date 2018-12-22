@@ -1,0 +1,60 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{algorithm2e}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{biblatex}
+\addbibresource{cp_afr.bib}
+\author{Norio Kosaka}
+\title{Review: Nonparametric predictive distributions based on conformal prediction}
+\begin{document}
+
+\maketitle
+
+\section{Paper Profile}
+\begin{itemize}
+\item Title: Nonparametric predictive distributions based on conformal
+prediction
+\item Author: Vladimir Vovk, Jieli Shen, Valery Manokhin, Min-ge Xie
+\item Publish Year: 2017
+\end{itemize}
+
+\section{Contents in the paper}
+\begin{enumerate}
+\item Introduction
+\item Randomised and Conformal Predictive Distributions
+\begin{itemize}
+    \item Defining properties of distribution functions
+    \item Criterion of being a CPs
+\end{itemize}
+\item Least Squares Prediction Machine
+\begin{itemize}
+    \item The studentised LSPM in an explicit form
+    \item The batch version of studentised LSPM
+    \item The ordinary LSPM
+\end{itemize}
+\item A property of validity of the LSPM in the online mode
+\item Asymptotic efficiency
+\item Experimental Results
+\item Conclusions
+\end{enumerate}
+
+\section{Abstract}
+In this paper, they have proposed three different LSPM, which is \textit{studentised LSPM}, \textit{batch version of studentised LSPM} and the \textit{ordinary LSPM}, to form the predictive distribution in regression problem. And they have examined the validity and the efficiency of their proposition with artificially generated 1000 samples based on IID assumption.
+
+\section{Proposal}
+
+\section{Paper Structure}
+
+\section{Conclusions}
+The present paper proposed the conformal predictive distributions in regression problem, which has advantage over the usual conformal prediction intervals at the point where conformal predictive distributions contain more information and can produce a plethora of prediction intervals.
+
+\medskip
+ 
+\printbibliography
+
+\end{document}

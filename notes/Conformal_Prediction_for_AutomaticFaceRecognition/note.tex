@@ -1,0 +1,84 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{algorithm2e}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{biblatex}
+\addbibresource{cp_afr.bib}
+\author{Norio Kosaka}
+\title{Review: Conformal Prediction for Automatic Face Recognition}
+\begin{document}
+
+\maketitle
+
+\section{Paper Profile}
+\begin{itemize}
+\item Title: Conformal Prediction for Automatic Face Recognition
+\item Author: Charalambos Eliades, Harris Papadopoulos
+\item Organisation: Computer Science and Engineering Department, Frederick University
+\item Publish Year: 2017
+\item URL: http://proceedings.mlr.press/v60/eliades17a/eliades17a.pdf
+\end{itemize}
+
+\section{Prerequisites}
+\begin{itemize}
+    \item SIFT(Scale Invariant Feature Transformation): a method for extracting distinctive invariant features from images that can be used to perform reliable matching between different views of an object or scene. It has been introduced by Lowe(2004) \cite{lowe2004distinctive}
+    \item Feature Extraction from Images: good blog entry\\
+    http://robonchu.hatenablog.com/entry/2017/08/08/220905 \\
+    https://qiita.com/icoxfog417/items/adbbf445d357c924b8fc#%E7%89%B9%E5%BE%B4%E7%82%B9%E3%81%AE%E8%A1%A8%E7%8F%BE%E6%96%B9%E6%B3%95feature-description
+\end{itemize}
+
+\section{Contents in the paper}
+\begin{enumerate}
+\item Introduction
+\item Related Work
+\item Conformal Prediction
+\item SIFT Features
+    \begin{enumerate}
+        \item Extrema Detection
+        \item Low Contrast Key-point Removal
+        \item Orientation Assignment
+        \item Descriptor Calculation
+    \end{enumerate}
+\item Automatic Face Recognition Techniques
+    \begin{enumerate}
+        \item Partial Kepnekci Technique
+        \item Lenc-Kral Matching
+    \end{enumerate}
+\item Non-conformity measures for FR-TCP
+\item Experiments and Results
+    \begin{enumerate}
+        \item Experimental Setting and performance Measures
+        \item AT&T Faces Results
+        \item UFI Corpus Subset Results
+    \end{enumerate}
+\item Conclusions
+\end{enumerate}
+
+\section{Abstract}
+They have investigated the use of combination of CP with SIFT in a domain of Automatic Face Recognition(AFR). Particularly speaking, they have combined CP with two classifiers based on calculating similarities between images using \textit{SIFT} features. Then they have examined the performance of the classifiers with the given data sets, which are AT&T Faces and UFI Corpus subset.
+
+\section{Proposal}
+They have examined the combination of NCM(non-conformity measure) with SIFT to detect the faces of the people. Although the author did not mention about what TCP stands for, they conducted the experiments to verify the accuracy of their approach, which is AFR-TCPs.
+
+\section{Paper Structure}
+In Section 2 we provide an overview
+of related work on AFR and of previous work on obtaining confidence information for the
+particular task. Next, Section 3 gives a brief description of the general CP framework. In
+Section 4 we concentrate on the usage and calculation of SIFT features, while in Section
+5 we discuss the two AFR techniques used as basis for the CPs proposed in this work.
+Section 6 details the developed NCMs and completes the description of the proposed CP
+approaches. Section 7 reports and discusses our experimental results. Finally, Section 8
+gives our conclusions and plans for future work.
+
+\section{Conclusions}
+Unlike most existing AFR approaches that output only a single prediction, the proposed CP approaches complement each of their predictions with probabilistically valid measures of confidence. According to their experimental results, the proposed approaches were sufficiently compatible with the conventional approaches.
+
+\medskip
+ 
+\printbibliography
+
+\end{document}

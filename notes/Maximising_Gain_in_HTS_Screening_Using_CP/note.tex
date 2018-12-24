@@ -1,0 +1,52 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{algorithm2e}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{biblatex}
+\addbibresource{sample.bib}
+\author{Norio Kosaka}
+\title{Review: Prediction of Metabolic Transformations using Cross Venn-ABERS Predictors}
+\begin{document}
+
+\maketitle
+
+\section{Paper Profile}
+\begin{itemize}
+\item Title: Prediction of Metabolic Transformations using Cross Venn-ABERS Predictors
+\item Author: Staffan Arvidsson, Ola Spjuth, Lars Carlsson, Paolo Toccaceli
+\item Publish Year: 2017
+\end{itemize}
+
+\section{Contents in the paper}
+\begin{enumerate}
+\item Introduction
+\item Method
+\begin{enumerate}
+    \item Data
+    \item Feature generation
+    \item Conformal Prediction
+    \item Gain-Cost Function
+\end{enumerate}
+\item Results \& Discussion
+\end{enumerate}
+
+\section{Abstract}
+In this paper, they have addressed the problem of efficiency in screening of early drug discovery in the human body combining the CP and a gain-cost function to make predictions in order to maximise the gain of screening campaigns on new screening sets. And their results show that using 20\% of the screening library as an initial screening set and using the data obtained together with a gain-cost function, the significance level of the predictor maximising the gain can be achieved. They have exaimied the proposition with four datasets containing more than 40,000 compounds and corresponding assay outcome data were downloaded from the PubChem BioAssay database.
+
+\section{Conclusions}
+This study investigated the usage of a combined strategy, with the aim of maximizing gain
+for screening campaigns, employing a gain-cost function in combination with CP in order to
+correctly identify a suitable significance level for the training set by internal validation that,
+subsequently, also represents a good level for screening an active compound enriched subset
+from the remainder of the library in question.
+
+\medskip
+ 
+\printbibliography
+
+\end{document}

@@ -1,0 +1,44 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{algorithm2e}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{biblatex}
+\addbibresource{sample.bib}
+\author{Norio Kosaka}
+\title{Review: Prediction of Metabolic Transformations using Cross Venn-ABERS Predictors}
+\begin{document}
+
+\maketitle
+
+\section{Paper Profile}
+\begin{itemize}
+\item Title: Prediction of Metabolic Transformations using Cross Venn-ABERS Predictors
+\item Author: Staffan Arvidsson, Ola Spjuth, Lars Carlsson, Paolo Toccaceli
+\item Publish Year: 2017
+\end{itemize}
+
+\section{Contents in the paper}
+\begin{enumerate}
+\item Introduction
+\item Method
+\begin{enumerate}
+    \item Data
+    \item Algorithms
+\end{enumerate}
+\item Results
+\item Conclusion
+\end{enumerate}
+
+\section{Summary}
+In this paper, they have present a study using probabilistic predictions applying Cross-Venn-ABERS Predictors(CVAPs) on data for sit-of-metabolism. They used a dataset of 73599 biotransformations, applied SMIRKS filter to define biotransformations of interest and constructed five datasets where chemical structures were represented using signatures descriptions. The empirical results show that CVAP works well and the results are promising, showing well-calibrated results for most of the datasets, only producing poor results for the extremely skewed dataset were only 3\% of data. In conclusion, they mentioned that Producing probability based predictions is a desired property within drug discovery applications and machine learning in general, making CVAP a framework worth exploring further.
+
+\medskip
+ 
+\printbibliography
+
+\end{document}

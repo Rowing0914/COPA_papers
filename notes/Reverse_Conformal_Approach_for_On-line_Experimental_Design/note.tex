@@ -1,0 +1,53 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{algorithm2e}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{biblatex}
+\addbibresource{sample.bib}
+\author{Norio Kosaka}
+\title{Review: Reverse Conformal Approach for On-line Experimental Design}
+\begin{document}
+
+\maketitle
+
+\section{Paper Profile}
+\begin{itemize}
+\item Title: Reverse Conformal Approach for On-line Experimental Design
+\item Author: Ilia Nouretdinov
+\item Publish Year: 2017
+\end{itemize}
+
+\section{Contents in the paper}
+\begin{enumerate}
+\item Introduction
+\item Background
+\begin{enumerate}
+    \item Conformal Prediction
+    \item Reverse (Object-by-Label) Conformal Prediction
+    \item Conformal Prediction for Transfer Learning(developed by Zhou et al. (2013)\cite{zhou2013conformity})
+\end{enumerate}
+\item Methodology
+\item Application
+\begin{enumerate}
+    \item Data Processing and Modelling
+    \item Results
+\end{enumerate}
+\item Conclusions
+\end{enumerate}
+
+\section{Paper Structure}
+The key ideas will be explained in background Section 2 where we explain the idea of reverse (object-by-label) conformal approach. Two resulting algorithms are presented in Section 3. They are different in the approach to selection of an instance during the second phase of learning. Section 4 is modelling such kind of on-line experimental design on the base of a toy problem where the natural experiments are retrospectively simulated by a formal ’opening’ of the labels for the learning algorithm. The task is the search for ’edible’ mushrooms, based on the Mushroom data set from UCI repository. As an experimental goal, we try to increase percentage of success that is measured by the percentage of edible mushroom find in 100 first ’experiments’. The improvement is being done in the following ways. First, by looking for the right balance between random and active phases of learning. Second, by applying a specially designed criterion of choice for the second phase. We finish with conclusion Section 5 discussing directions of the future work.
+
+\section{Summary}
+In this paper, the author has developed the novel experimental design in on0line manner with reversed conformal predictors. In this context, the word \textit{reversed} means that the prediction of objects which can have a given label, instead of usual prediction. Since the label reflect some desired property of the object, this is expected to work well. For this type of task, CP can provide a prediction set that is a set of objects that are likely to have the choice criterion based on conformal output, and elements of transfer learning in order to keep the validity properties in on-line regime. In fact, the motivation of this research was to solve an experimental design problem which is likely to arise in such areas as drug design. And the results show that the experimental design in the process of drug discovery can be done on the basis of CP, and the validity of CP can be safely held by means of \textit{transfer learning}.
+
+\medskip
+ 
+\printbibliography
+
+\end{document}

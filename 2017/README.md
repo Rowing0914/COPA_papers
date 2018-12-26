@@ -26,5 +26,3 @@ https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmaf
 * [SCOT Approximation, Training and Asymptotic Inference by Mikhail Malyutov, Paul Grosu](http://proceedings.mlr.press/v60/malyutov17a/malyutov17a.pdf)
 * [supplementary note](http://proceedings.mlr.press/v60/malyutov17a/malyutov17a-supp.pdf)
     * [CP-RAkkEL: Improving Random kk-labelsets with Conformal Prediction for Multi-label Classification by Fan Yang, Xiaolu Gan, Huazhen Wang, Lei Feng, Yongxuan Lai ](http://proceedings.mlr.press/v60/yang17a/yang17a.pdf)
-* [COPA 2016](http://clrc.rhul.ac.uk/copa2016/)
-* [Conformal and Probabilistic Prediction with Applications](https://link.springer.com/content/pdf/10.1007%2F978-3-319-33395-3.pdf)
